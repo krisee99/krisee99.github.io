@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="w-full h-screen" style="background: #edf2f7">
+    <main class="flex-grow flex flex-col justify-center items-center">
+      <div class="mt-24 sm:w-full md:max-w-lg mx-auto">
+        <div
+          class="coding inverse-toggle px-5 pt-4 shadow-lg text-gray-100 text-sm font-mono subpixel-antialiased bg-gray-800 pb-6 pt-4 rounded-lg leading-normal overflow-hidden"
+        >
+          <div class="top mb-2 flex">
+            <div class="h-3 w-3 bg-red-500 rounded-full"></div>
+            <div class="ml-2 h-3 w-3 bg-orange-300 rounded-full"></div>
+            <div class="ml-2 h-3 w-3 bg-green-500 rounded-full"></div>
+          </div>
+          <div class="mt-4">
+            <span class="text-green-400">~$</span>
+            <span class="flex-1 typing items-center pl-2">
+              cd projects; ls
+              <br />
+            </span>
+            <span class="text-green-400">~$</span>
+            <span class="flex-1 typing items-center pl-2">
+              ....
+              <br />
+            </span>
+            <span class="flex-1 typing items-center pl-2"> results: </span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
