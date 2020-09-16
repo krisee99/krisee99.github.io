@@ -8,11 +8,86 @@
       href="https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+      }
+
+      /* Modal Content (Image) */
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* The Close Button */
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* 100% Image Width on Smaller Screens */
+      @media only screen and (max-width: 700px) {
+        .modal-content {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
 
-  <body class="w-full h-screen" style="background: #edf2f7">
-    <main class="flex-grow flex flex-col justify-center items-center">
-      <div class="mt-24 sm:w-full md:max-w-lg mx-auto">
+  <body class="w-full h-screen bg-gray-700">
+    <main
+      class="container mx-auto flex-grow flex flex-col justify-center items-center px-3"
+    >
+      <div class="mt-24 w-64 h-64 relative mb-4">
+        <div
+          style="box-shadow: 0px 0px 5px #fff"
+          class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer"
+        >
+          <a href="https://facebook.com/tischler.kristof" target="_blank">
+            <img
+              src="https://scontent-vie1-1.xx.fbcdn.net/v/t31.0-8/26025789_1531298723628866_5645270262678213349_o.jpg?_nc_cat=100&_nc_sid=09cbfe&_nc_ohc=k-cpvX4bmRAAX_-CS_w&_nc_ht=scontent-vie1-1.xx&oh=25f0225425b2018d80540d08c8aa6389&oe=5F84DC36"
+              alt="Tischler Kristóf"
+              class="object-cover object-center w-full h-full visible group-hover:hidden"
+            />
+          </a>
+        </div>
+      </div>
+      <span class="mx-auto text-3xl text-gray-900">Tischler Kristóf </span>
+      <div class="w-full mt-16 md:max-w-lg mx-auto">
         <div
           class="coding inverse-toggle px-5 pt-4 shadow-lg text-gray-100 text-sm font-mono subpixel-antialiased bg-gray-800 pb-6 pt-4 rounded-lg leading-normal overflow-hidden"
         >
@@ -27,15 +102,490 @@
               cd projects; ls
               <br />
             </span>
-            <span class="text-green-400">~$</span>
             <span class="flex-1 typing items-center pl-2">
               ....
               <br />
+              results:
             </span>
-            <span class="flex-1 typing items-center pl-2"> results: </span>
           </div>
         </div>
       </div>
+
+      <section>
+        <div class="py-24 mx-auto">
+          <div
+            class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+          >
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
+            >
+              Publicly available projects:
+            </h1>
+            <p class="lg:w-1/2 w-full leading-relaxed text-base">
+              Here you can find a list of my publicly available previous works.
+              Some of the repos only contain parts of bigger applications like
+              Laravel packages, libraries etc. For projects that have a public
+              repo you'll see a small GitHub icon, click on them to check the
+              source.
+            </p>
+          </div>
+          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+            <div
+              class="p-4 md:w-1/2 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
+            >
+              <div
+                class="bg-gray-300 h-56 w-full rounded-lg shadow-md cursor-pointer bg-cover"
+                style="background-image: url(img/dashboard.png)"
+              ></div>
+
+              <div
+                class="w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+              >
+                <div class="header-content inline-flex">
+                  <div
+                    class="category-badge mr-3 h-4 w-4 m rounded-full m-1 bg-purple-100"
+                  >
+                    <div class="h-2 w-2 rounded-full m-1 bg-purple-500"></div>
+                  </div>
+                  <div class="category-title flex-1 text-sm">
+                    Laravel Package
+                  </div>
+                </div>
+                <div class="my-4 font-medium">
+                  MayIFit B2B E-commerce platform
+                </div>
+
+                <div class="summary-post text-justify text-sm leading-tight">
+                  This package was primarily developed for
+                  <a
+                    href="https://gude.hu"
+                    target="_blank"
+                    class="text-blue-700"
+                    >GÜDE Hungary Kft.</a
+                  >
+                  The project was a huge success as it seamlessly integrated to
+                  the WMS system used at Lagermax Spedició Kft. making manual
+                  labour obsolute.
+                  <div class="flex justify-evenly">
+                    <a
+                      href="https://laravel.com"
+                      target="_blank"
+                      class="bg-red-100 text-center inline-block text-red-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Laravel</span>
+                    </a>
+                    <a
+                      href="https://mysql.com"
+                      target="_blank"
+                      class="bg-blue-100 text-center inline-block text-blue-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">MySQL</span> </a
+                    ><a
+                      href="https://graphql.org/"
+                      target="_blank"
+                      class="bg-pink-100 text-center inline-block text-pink-500 w-18 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">GraphQL</span> </a
+                    ><a
+                      href="https://vuejs.org/"
+                      target="_blank"
+                      class="bg-green-100 text-center inline-block text-green-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Vue.js</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-1 my-4">
+                  <a href="https://github.com/MayIFit/ext-shop" target="_blank">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-4 md:w-1/2 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
+            >
+              <div
+                class="bg-gray-300 h-56 w-full rounded-lg shadow-md cursor-pointer bg-cover"
+                style="background-image: url(img/dashboard.png)"
+              ></div>
+
+              <div
+                class="w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+              >
+                <div class="header-content inline-flex">
+                  <div
+                    class="category-badge mr-3 h-4 w-4 m rounded-full m-1 bg-purple-100"
+                  >
+                    <div class="h-2 w-2 rounded-full m-1 bg-purple-500"></div>
+                  </div>
+                  <div class="category-title flex-1 text-sm">
+                    Laravel Package
+                  </div>
+                </div>
+                <div class="my-4 font-medium">
+                  MayIFit Right Management System
+                </div>
+
+                <div class="summary-post text-justify text-sm leading-tight">
+                  This package is part of the MayIFit B2B E-commerce platform.
+                  The purpose was to have a right management system that can
+                  handle multi role permissions and unique, user based
+                  permissions aswell. This pacakge is heavily based on Laravels
+                  <a
+                    href="https://github.com/laravel/sanctum"
+                    target="_blank"
+                    class="text-blue-500"
+                    >Sanctum</a
+                  >
+                  package for token based authentication and authorization.
+                  <div class="flex justify-evenly">
+                    <a
+                      href="https://laravel.com"
+                      target="_blank"
+                      class="bg-red-100 text-center inline-block text-red-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Laravel</span>
+                    </a>
+                    <a
+                      href="https://mysql.com"
+                      target="_blank"
+                      class="bg-blue-100 text-center inline-block text-blue-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">MySQL</span> </a
+                    ><a
+                      href="https://graphql.org/"
+                      target="_blank"
+                      class="bg-pink-100 text-center inline-block text-pink-500 w-18 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">GraphQL</span> </a
+                    ><a
+                      href="https://vuejs.org/"
+                      target="_blank"
+                      class="bg-green-100 text-center inline-block text-green-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Vue.js</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-1 my-4">
+                  <a
+                    href="https://github.com/MayIFit/core-permission"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-4 md:w-1/2 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
+            >
+              <div
+                class="bg-gray-300 h-56 w-full rounded-lg shadow-md cursor-pointer bg-cover"
+                style="background-image: url(img/dashboard.png)"
+              ></div>
+
+              <div
+                class="w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+              >
+                <div class="header-content inline-flex">
+                  <div
+                    class="category-badge mr-3 h-4 w-4 m rounded-full m-1 bg-purple-100"
+                  >
+                    <div class="h-2 w-2 rounded-full m-1 bg-purple-500"></div>
+                  </div>
+                  <div class="category-title flex-1 text-sm">
+                    Laravel Package
+                  </div>
+                </div>
+                <div class="my-4 font-medium">
+                  MayIFit Translation Management System
+                </div>
+
+                <div class="summary-post text-justify text-sm leading-tight">
+                  This package is part of the MayIFit B2B E-commerce platform
+                  and is basically a GraphQL wrapper for the
+                  <a
+                    href="https://github.com/spatie/laravel-translation-loader"
+                    target="_blank"
+                    class="text-blue-500"
+                  >
+                    Spatie Translation Loader
+                  </a>
+                  package.
+                  <div class="flex justify-evenly">
+                    <a
+                      href="https://laravel.com"
+                      target="_blank"
+                      class="bg-red-100 text-center inline-block text-red-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Laravel</span>
+                    </a>
+                    <a
+                      href="https://mysql.com"
+                      target="_blank"
+                      class="bg-blue-100 text-center inline-block text-blue-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">MySQL</span> </a
+                    ><a
+                      href="https://graphql.org/"
+                      target="_blank"
+                      class="bg-pink-100 text-center inline-block text-pink-500 w-18 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">GraphQL</span> </a
+                    ><a
+                      href="https://vuejs.org/"
+                      target="_blank"
+                      class="bg-green-100 text-center inline-block text-green-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Vue.js</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-1 my-4">
+                  <a
+                    href="https://github.com/MayIFit/core-translation"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-4 md:w-1/2 md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
+            >
+              <div
+                class="bg-gray-300 h-56 w-full rounded-lg shadow-md cursor-pointer bg-cover bg-center"
+                style="background-image: url(img/clevermed.png)"
+              ></div>
+
+              <div
+                class="w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+              >
+                <div class="header-content inline-flex">
+                  <div
+                    class="category-badge mr-3 h-4 w-4 m rounded-full m-1 bg-blue-100"
+                  >
+                    <div class="h-2 w-2 rounded-full m-1 bg-blue-500"></div>
+                  </div>
+                  <div class="category-title flex-1 text-sm">
+                    Laravel Application
+                  </div>
+                </div>
+                <div class="my-4 font-medium">
+                  Clevermedical Online product catalog
+                </div>
+
+                <div class="summary-post text-justify text-sm leading-tight">
+                  <a
+                    href="https://clevermedical.hu"
+                    target="_blank"
+                    class="text-blue-700"
+                    >Clevermedical Kft.</a
+                  >'s primary objective is to distribute refurbished and used
+                  medical and accessibility equipments at an affordable price.
+
+                  <div class="flex justify-evenly">
+                    <a
+                      href="https://laravel.com"
+                      target="_blank"
+                      class="bg-red-100 text-center inline-block text-red-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Laravel</span>
+                    </a>
+                    <a
+                      href="https://mysql.com"
+                      target="_blank"
+                      class="bg-blue-100 text-center inline-block text-blue-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">MySQL</span>
+                    </a>
+                    <a
+                      href="https://mysql.com"
+                      target="_blank"
+                      class="bg-blue-100 text-center inline-block text-blue-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">jQuery</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="py-24 mx-auto">
+          <div
+            class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+          >
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
+            >
+              Private projects:
+            </h1>
+            <p class="lg:w-1/2 w-full leading-relaxed text-base">
+              Here you can find a brief list of my previous works. These
+              projects can't be reached by the public and their repositories are
+              private.
+            </p>
+          </div>
+          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+            <div
+              class="p-4 w-full md:mb-0 mb-6 flex flex-col justify-center items-center max-w-sm mx-auto"
+            >
+              <div
+                class="w-70 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden p-5"
+              >
+                <div class="header-content inline-flex">
+                  <div
+                    class="category-badge mr-3 h-4 w-4 m rounded-full m-1 bg-blue-100"
+                  >
+                    <div class="h-2 w-2 rounded-full m-1 bg-blue-500"></div>
+                  </div>
+                  <div class="category-title flex-1 text-sm">
+                    Laravel Application
+                  </div>
+                </div>
+                <div class="my-4 font-medium">
+                  Lagermax Spedició Kft. internal time and attendance manager
+                  (Checkout)
+                </div>
+
+                <div class="summary-post text-justify text-sm leading-tight">
+                  They used Excel sheets and wanted something more fitting for
+                  the task. Here came Checkout to the rescue automatizing most
+                  if not all of the internall processes for: holiday management,
+                  absence handling, attendance sheet printing and so on...
+                  <div class="flex justify-evenly">
+                    <a
+                      href="https://laravel.com"
+                      target="_blank"
+                      class="bg-red-100 text-center inline-block text-red-500 w-16 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">Laravel</span>
+                    </a>
+                    <a
+                      href="https://www.postgresql.org/"
+                      target="_blank"
+                      class="bg-blue-100 text-center inline-block text-blue-500 w-24 mt-4 block rounded p-2 text-sm"
+                    >
+                      <span class="">PostgreSQL</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <aside
+      class="container mx-auto flex-grow flex flex-col justify-center items-center px-3 my-64"
+    >
+      <h4
+        class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"
+      >
+        About myself
+      </h4>
+      <p class="lg:w-1/2 w-full leading-relaxed text-base">
+        If you are here, thank you for your time. As you can see, I code. A lot.
+        I'm quite confident in my skills yet I know that there is still a lot to
+        learn. My hobbies mainly revolve around learning new technologies,
+        trying them out and / or making something usefull from barebone
+        frameworks, or reading Warhammer 40k books(as many books there are I
+        think that this can be considered to be a hobby of it's own).
+      </p>
+      <p class="my-2 lg:w-1/2 w-full leading-relaxed text-base">
+        In May 2019 I started my own company: MayIFit Bt. (Don't look it up, I
+        didn't have any time to setup a page), what had a great success so far.
+        These projects (up there) were handled from the basics: setting up the
+        repos, the Github workflows (kind of a CD), making test environments on
+        either Heroku or Docker, configure the web (Apache / Nginx), database
+        (MySQL, PostgreSQL) servers.
+      </p>
+
+      <p class="my-2 lg:w-1/2 w-full leading-relaxed text-base">
+        I'm a proud owner (or father for dog persons) of two beautiful little
+        puppers, Loki a Shiba Inu and Odin an Akita Inu. We spend almost every
+        afternoon together and with my girlfriend, hiking near our living place.
+      </p>
+      <span class="my-2">If you have some time please check out their</span>
+      <a href="https://www.instagram.com/loki_the_shiba_" target="_blank"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="128"
+          height="128"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          /></svg
+      ></a>
+    </aside>
+    <!-- The Modal -->
+    <div id="popup" class="modal">
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01" />
+    </div>
   </body>
+  <script type="text/javascript">
+    // Get the modal
+    const modal = document.getElementById("popup");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    const images = [...document.querySelectorAll(".bg-cover")];
+    images.map((img) => {
+      img.addEventListener("click", displayModalWithImage);
+    });
+
+    function displayModalWithImage(event) {
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = event.target.style.backgroundImage.split(/"/)[1];
+    }
+
+    var modalImg = document.getElementById("img01");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+  </script>
 </html>
